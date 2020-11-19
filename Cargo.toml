@@ -1,0 +1,16 @@
+[package]
+name = "otor_vst_html"
+version = "0.1.0"
+authors = ["ippee <ippee.music@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+vst = "0.2.0"
+vst-gui = { git = "https://github.com/ippee/rust-vst-gui.git" }
+lazy_static = "1.4.0"
+
+[lib]
+name = "OTOR"
+crate-type = ["cdylib"]

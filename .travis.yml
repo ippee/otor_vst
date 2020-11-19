@@ -1,0 +1,41 @@
+sudo: false
+language: rust
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+os:
+  - windows
+  - osx
+  - linux
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rust: nightly
+    - os: osx
+    - os: linux
+
+  include:
+    - os: windows
+      rust: stable
+    - os: windows
+      rust: beta
+    - os: windows
+      rust: nightly
+    - os: osx
+      rust: stable
+      env: TARGET=x86_64-apple-darwin
+    - os: linux
+      rust: stable
+      dist: trusty
+      
+
+branches:
+  only:
+    - master
+
+script:
+  - cargo build --verbose --all
