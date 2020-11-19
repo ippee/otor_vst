@@ -21,7 +21,7 @@ If it's done also, I will publish OTOR formally.
 
 At the moment, OTOR supports **Windows OS only**.  
 
-I want to develope the Mac OS version, but its outlook does not stand at all. If I should receive many requests for this, I would plan something like a crowdfunding campaign.  
+I want to develop the Mac OS version, but its outlook does not stand at all. If I should receive many requests for this, I would plan something like a crowdfunding campaign.  
 
 ## WARNING!
 **EARRAPE SOUNDS MAY DAMAGE YOUR EARS AS WELL AS YOUR AUDIO EQUIPMENT.**  
