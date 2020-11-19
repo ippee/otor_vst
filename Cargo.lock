@@ -20,9 +20,9 @@ checksum = "0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a"
 
 [[package]]
 name = "cc"
-version = "1.0.62"
+version = "1.0.63"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1770ced377336a88a67c473594ccc14eca6f4559217c34f64aac8f83d641b40"
+checksum = "ad9c6140b5a2c7db40ea56eb1821245e5362b44385c05b76288b1a599934ac87"
 
 [[package]]
 name = "cfg-if"
@@ -183,7 +183,7 @@ dependencies = [
 [[package]]
 name = "vst-gui"
 version = "0.2.0"
-source = "git+https://github.com/ippee/rust-vst-gui.git#d17c09c9e65a6f6689f11fa1f8c7d82312c94028"
+source = "git+https://github.com/ippee/rust-vst-gui.git#7b3cc40d0f59b98f90a08caa9d8a91d499038c7e"
 dependencies = [
  "cocoa",
  "memoffset",
@@ -195,7 +195,7 @@ dependencies = [
 [[package]]
 name = "webview-sys"
 version = "0.0.1"
-source = "git+https://github.com/ippee/rust-vst-gui.git#d17c09c9e65a6f6689f11fa1f8c7d82312c94028"
+source = "git+https://github.com/ippee/rust-vst-gui.git#7b3cc40d0f59b98f90a08caa9d8a91d499038c7e"
 dependencies = [
  "cc",
  "cocoa",
