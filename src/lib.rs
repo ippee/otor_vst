@@ -1,37 +1,19 @@
 #[macro_use]
 extern crate vst;
 extern crate vst_gui;
-
 extern crate lazy_static;
 
-use std::fs::read_to_string;
 use std::sync::{Arc, Mutex};
 use vst::buffer::AudioBuffer;
 use vst::editor::Editor;
 use vst::plugin::{Category, Plugin, Info};
 use lazy_static::lazy_static;
 
-// Convert a decibel value to a linear value.
-fn decibel_to_linear(db: f32) -> f32 {
-    return 10.0_f32.powf(db / 20.0);
-}
-
-// Get the text of index.html.
-// You can build a design from the theme folder. 
-// If you publish a vst plugin using this crete, you should put the
-// theme folder on the directory in the same of the plugin.
-fn load_html() -> String {
-    let content = read_to_string("./theme/index.html");
-    let string_content = match content {
-        Ok(v) => v,
-        Err(_e) => "".to_string(),
-    };
-    string_content
-}
+pub mod load_html;
 
 // Load the "index.html"
 lazy_static! {
-    static ref HTML: String = load_html();
+    static ref HTML: String = load_html::load_html();
 }
 
 struct OtorParameters {
@@ -77,7 +59,7 @@ fn create_javascript_callback(
 struct Otor {
     // We access this object both from a UI thread and from an audio processing
     // thread.
-    otor_parameters: Arc<Mutex<OtorParameters>>,
+    params: Arc<Mutex<OtorParameters>>,
 }
 
 impl Default for Otor {
@@ -90,7 +72,7 @@ impl Default for Otor {
         ));
 
         Otor {
-            otor_parameters: otor_parameters.clone(),
+            params: otor_parameters.clone(),
         }
     }
 }
@@ -112,17 +94,20 @@ impl Plugin for Otor {
 
     // Here is where the bulk of our audio processing code goes.
     fn process(&mut self, buffer: &mut AudioBuffer<f32>) {
-        let locked_params = self.otor_parameters.lock().unwrap();
+        let locked_params = self.params.lock().unwrap();
 
         let gain = locked_params.gain;
         let output = locked_params.output;
+
+        // Convert a decibel value to a linear value.
+        let gain_linear = 10.0_f32.powf(gain / 20.0);
 
         // Destructure an audio buffer into input and output buffers.
         for (input_buffer, output_buffer) in buffer.zip() {
 
             for (input_sample, output_sample) in input_buffer.iter().zip(output_buffer) {
                 // Amplify a signal.
-                *output_sample = *input_sample * (decibel_to_linear(gain));
+                *output_sample = *input_sample * gain_linear;
 
                 // Clip a signal by force.
                 if *output_sample > 1.0 {
@@ -140,8 +125,8 @@ impl Plugin for Otor {
     fn get_editor(&mut self) -> Option<Box<dyn Editor>> {
         let gui = vst_gui::new_plugin_gui(
             HTML.to_string(),
-            create_javascript_callback(self.otor_parameters.clone()),
-            Some((1000, 320)));
+            create_javascript_callback(self.params.clone()),
+            Some((900, 300)));
         Some(Box::new(gui))
     }
 }
