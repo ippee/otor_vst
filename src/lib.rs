@@ -35,8 +35,8 @@ lazy_static! {
 }
 
 struct OtorParameters {
-    pub gain_rate: f32,
-    pub max_gain_level: f32,
+    pub gain: f32,
+    pub output: f32,
 }
 
 fn create_javascript_callback(
@@ -51,12 +51,20 @@ fn create_javascript_callback(
         let mut locked_params = otor_parameters.lock().unwrap();
 
         match command {
-            "getGainRate" => {
-                return locked_params.gain_rate.to_string();
+            "getGain" => {
+                return locked_params.gain.to_string();
             },
-            "setGainRate" => {
+            "setGain" => {
                 if argument.is_ok() {
-                    locked_params.gain_rate = argument.unwrap();
+                    locked_params.gain = argument.unwrap();
+                }
+            },
+            "getOutput" => {
+                return locked_params.output.to_string();
+            },
+            "setOutput" => {
+                if argument.is_ok() {
+                    locked_params.output = argument.unwrap();
                 }
             },
             _ => {}
@@ -76,8 +84,8 @@ impl Default for Otor {
     fn default() -> Otor {
         let otor_parameters = Arc::new(Mutex::new(
             OtorParameters {
-                gain_rate: 0.0, // range: 0.0 to 1.0
-                max_gain_level: 150.0, //dBFS
+                gain: 0.0, //dBFS
+                output: 100.0, // range: 0.0 to 100.0
             }
         ));
 
@@ -106,15 +114,15 @@ impl Plugin for Otor {
     fn process(&mut self, buffer: &mut AudioBuffer<f32>) {
         let locked_params = self.otor_parameters.lock().unwrap();
 
-        let gain_rate = locked_params.gain_rate;
-        let max_gain_level = locked_params.max_gain_level;
+        let gain = locked_params.gain;
+        let output = locked_params.output;
 
         // Destructure an audio buffer into input and output buffers.
         for (input_buffer, output_buffer) in buffer.zip() {
 
             for (input_sample, output_sample) in input_buffer.iter().zip(output_buffer) {
                 // Amplify a signal.
-                *output_sample = *input_sample * (decibel_to_linear(max_gain_level * gain_rate));
+                *output_sample = *input_sample * (decibel_to_linear(gain));
 
                 // Clip a signal by force.
                 if *output_sample > 1.0 {
@@ -123,6 +131,8 @@ impl Plugin for Otor {
                 else if *output_sample < -1.0 {
                     *output_sample = -1.0
                 }
+
+                *output_sample *= output / 100.0;
             }
         }
     }
@@ -131,7 +141,7 @@ impl Plugin for Otor {
         let gui = vst_gui::new_plugin_gui(
             HTML.to_string(),
             create_javascript_callback(self.otor_parameters.clone()),
-            Some((480, 320)));
+            Some((1000, 320)));
         Some(Box::new(gui))
     }
 }
