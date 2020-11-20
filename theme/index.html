@@ -7,17 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style type="text/css">
-            body {
-                font-family: sans-serif;
-                text-align: center;
-                user-select:none;
-                -webkit-user-select:none;
-                -ms-user-select: none;
-                -moz-user-select:none;
-                -khtml-user-select:none;
-                -webkit-user-drag:none;
-                -khtml-user-drag:none;
-            }
+            {{ css }}
         </style>
 
     </head>
@@ -31,7 +21,7 @@
                 <br/>
             </div>
             <div class="col">
-                <img src={{ image_ear }}>
+                <img src="{{ image_ear }}">
             </div>
             <div class="col">
                 <label for="output">Output (%)</label>
@@ -45,18 +35,7 @@
     </body>
 
     <script>
-        var gain = document.getElementById("gain");
-        var output = document.getElementById("output");
-
-        gain.value = external.invoke("getGain");
-        output.value = external.invoke("getOutput");
-
-        gain.addEventListener("change", function(event) {
-            external.invoke("setGain " + event.target.value);
-        });
-        output.addEventListener("change", function(event) {
-            external.invoke("setOutput " + event.target.value);
-        });
+        {{ js }}
     </script>
 
 </html>

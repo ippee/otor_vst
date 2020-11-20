@@ -9,7 +9,6 @@ edition = "2018"
 [dependencies]
 vst = "0.2.1"
 vst-gui = { git = "https://github.com/ippee/rust-vst-gui.git" }
-lazy_static = "1.4.0"
 
 [lib]
 name = "OTOR"

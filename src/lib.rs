@@ -1,20 +1,13 @@
 #[macro_use]
 extern crate vst;
 extern crate vst_gui;
-extern crate lazy_static;
 
 use std::sync::{Arc, Mutex};
 use vst::buffer::AudioBuffer;
 use vst::editor::Editor;
 use vst::plugin::{Category, Plugin, Info};
-use lazy_static::lazy_static;
 
-pub mod load_html;
-
-// Load the "index.html"
-lazy_static! {
-    static ref HTML: String = load_html::load_html();
-}
+pub mod gui;
 
 struct OtorParameters {
     pub gain: f32,
@@ -124,7 +117,7 @@ impl Plugin for Otor {
 
     fn get_editor(&mut self) -> Option<Box<dyn Editor>> {
         let gui = vst_gui::new_plugin_gui(
-            HTML.to_string(),
+            gui::generate_html(),
             create_javascript_callback(self.params.clone()),
             Some((900, 300)));
         Some(Box::new(gui))
