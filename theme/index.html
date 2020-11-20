@@ -12,26 +12,24 @@
 
     </head>
 
-    <body oncontextmenu="return false;">
+    <body oncontextmenu="return false;" style="background: url({{ image_background }}) center / cover;">
         <div class="main">
             <div class="col">
                 <label for="gain">Gain (dB)</label>
-                <br/>
                 <input id="gain" type="range" min="0" max="100.0" value="0" step="0.1"/>
-                <br/>
             </div>
             <div class="col">
-                <img src="{{ image_ear }}">
+                <img class="ear" src="{{ image_ear }}">
             </div>
             <div class="col">
                 <label for="output">Output (%)</label>
-                <br/>
                 <input id="output" type="range" min="0" max="100.0" value="0" step="0.1"/>
-                <br/>
             </div>
         </div>
-        <div class="footer">
-        </div>
+
+        <footer>
+            <p class="title">OTOR v0.1</p>
+        </footer>
     </body>
 
     <script>

@@ -7,13 +7,14 @@ const JS_INVOKE: &str = include_str!("../theme/js/invoke_external_function.js");
 const CSS_MAIN: &str = include_str!("../theme/css/main.css");
 
 const IMAGE_EAR: &str = include_str!("../theme/images/ear");
+const IMAGE_BACKGROUND: &str = include_str!("../theme/images/background");
 
 pub fn generate_html() -> String {
     let js_tags: String = join_text!(JS_INVOKE);
     let css_tags: String = join_text!(CSS_MAIN);
 
-    let before: Vec<&str> = vec!["{{ js }}", "{{ css }}", "{{ image_ear }}"];
-    let after:Vec<&str> = vec![&*js_tags, &*css_tags, IMAGE_EAR];
+    let before: Vec<&str> = vec!["{{ js }}", "{{ css }}", "{{ image_ear }}", "{{ image_background }}"];
+    let after:Vec<&str> = vec![&*js_tags, &*css_tags, IMAGE_EAR, IMAGE_BACKGROUND];
 
     let html = replace_target(INDEX, before, after);
 
