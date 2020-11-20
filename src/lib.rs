@@ -79,7 +79,6 @@ impl Plugin for Otor {
             version: 1,
             inputs: 2,
             outputs: 2,
-            parameters: 1,
             category: Category::Effect,
             ..Default::default()
         }
