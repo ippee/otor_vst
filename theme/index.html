@@ -15,15 +15,15 @@
     <body oncontextmenu="return false;" style="background: url({{ image_background }}) center / cover;">
         <div class="main">
             <div class="col">
-                <label for="gain">Gain (dB)</label>
-                <input id="gain" type="range" min="0" max="100.0" value="0" step="0.1"/>
+                <label for="gain">Gain (dB)</label><br>
+                <input id="gain" class="input-knob" type="range" min="0" max="100.0" value="0" step="0.1"/>
             </div>
             <div class="col">
                 <img class="ear" src="{{ image_ear }}">
             </div>
             <div class="col">
-                <label for="output">Output (%)</label>
-                <input id="output" type="range" min="0" max="100.0" value="0" step="0.1"/>
+                <label for="output">Output (%)</label><br>
+                <input id="output" class="input-knob" type="range" min="0" max="100.0" value="0" step="0.1"/>
             </div>
         </div>
 
