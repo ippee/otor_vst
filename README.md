@@ -5,6 +5,8 @@
 The prototype of OTOR, which is Otoware Meister, are published below.  
 [https://github.com/ippee/otoware_meister_vst](https://github.com/ippee/otoware_meister_vst)  
 
+![OTOR](images/otor_ui.jpg)  
+
 ## What Is OTOR?
 **OTOR** is a distortion VST plugin which specializes in generating earrape sounds.  
 The name of OTOR comes from the Japanese word "otoware (音割れ)", which means "earrape" in English.  
@@ -42,9 +44,15 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 ### Programming Language
 - [Rust](https://github.com/rust-lang/rust) (1.42.0)
 
-### Crates
+### Crates (Libraries)
 - [vst-rs](https://github.com/RustAudio/vst-rs) (0.2.0)
 - [rust-vst-gui](https://github.com/ippee/rust-vst-gui.git)
   - This is a fork of [mikesoylu / rust-vst-gui](https://github.com/mikesoylu/rust-vst-gui)
   - The origin of them is [vanderlokken / rust-vst-gui](https://github.com/vanderlokken/rust-vst-gui)
 - [lazy_static](https://github.com/rust-lang-nursery/lazy-static.rs) (1.4.0)
+- [input-knobs](https://github.com/g200kg/input-knobs)
+
+### Images
+- [DIAL_NASTY_-_01.knob](https://www.g200kg.com/en/webknobman/gallery.php?m=p&p=1679) by MFS AKA ©2020
+- [red textile in close up image photo – Free Red Image on Unsplash](https://unsplash.com/photos/NRTYIVUkKnM?utm_source=twitter&utm_medium=referral&utm_content=photos-page-share) by Andrew Buchanan
+- [耳のイラスト](https://www.irasutoya.com/2014/05/blog-post_6517.html) by Illust-ya (いらすとや)
