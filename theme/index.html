@@ -17,10 +17,10 @@
             <div class="col">
                 <label for="gain">Gain</label><br>
                 <img id="gain-knob-image" class="knob-image" src="{{ image_knob_background }}">
-                <input id="gain" class="input-knob" oninput="external.invoke('setGain ' + this.value);rotateKnob('gain', 'gain-knob-image');" type="range" min="0" max="100.0" value="0" step="1"/>
+                <input id="gain" class="input-knob" oninput="external.invoke('setGain ' + this.value);rotateKnob('gain', 'gain-knob-image');bigEar('gain', 'ear');" type="range" min="0" max="100.0" value="0" step="1"/>
             </div>
             <div class="col">
-                <img class="ear" src="{{ image_ear }}">
+                <img id="ear" class="ear" src="{{ image_ear }}">
             </div>
             <div class="col">
                 <label for="output">Output</label><br>
