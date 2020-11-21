@@ -11,29 +11,18 @@ body {
     -ms-user-select: none;
     -webkit-user-select: none;
 
+    width: 600px;
+    height: 200px;
     overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
-img {
-    pointer-events: none;
 }
 
 .col {
     position: relative;
     width: 30%; 
-    height: 90vh; 
-    border: solid 1px #000000;
+    height: 180px; 
     margin: 0 5px 0px 5px;
     display: table-cell;
     vertical-align: middle;
-}
-
-footer {
-    color: white;
-    height: 10vh;
-    background-color: #222;
 }
 
 .label {
@@ -42,7 +31,11 @@ footer {
     left: 50%;
     transform: translate(-50%, -60%);
     -webkit-transform: translate(-50%, -55%);
-    -ms-transform: translate(-50%, -30%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+img {
+    pointer-events: none;
 }
 
 img.ear {
@@ -69,4 +62,14 @@ img.knob-image {
     height: 100px!important;
     border-radius: 50%;
     opacity: 0;
+}
+
+footer {
+    color: white;
+    height: 30px;
+    background-color: #222;
+}
+
+footer > p {
+    font-size: 1.2em;
 }

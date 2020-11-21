@@ -1,4 +1,4 @@
-function spinKnob(InputIdName, ImageIdName) {
+function rotateKnob(InputIdName, ImageIdName) {
     var input_elem = document.getElementById(InputIdName);
     var image_elem = document.getElementById(ImageIdName);
     

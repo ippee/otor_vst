@@ -5,5 +5,7 @@ function setInitialValue(idName, getFnName) {
 
 setInitialValue("gain", "getGain");
 setInitialValue("output", "getOutput");
-spinKnob("gain", "gain-knob-image");
-spinKnob("output", "output-knob-image");
+
+// Initialize the knob setting.
+rotateKnob("gain", "gain-knob-image");
+rotateKnob("output", "output-knob-image");

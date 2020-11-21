@@ -17,7 +17,7 @@
             <div class="col">
                 <label for="gain">Gain</label><br>
                 <img id="gain-knob-image" class="knob-image" src="{{ image_knob_background }}">
-                <input id="gain" class="input-knob" oninput="external.invoke('setGain ' + this.value);spinKnob('gain', 'gain-knob-image');" type="range" min="0" max="100.0" value="0" step="1"/>
+                <input id="gain" class="input-knob" oninput="external.invoke('setGain ' + this.value);rotateKnob('gain', 'gain-knob-image');" type="range" min="0" max="100.0" value="0" step="1"/>
             </div>
             <div class="col">
                 <img class="ear" src="{{ image_ear }}">
@@ -25,7 +25,7 @@
             <div class="col">
                 <label for="output">Output</label><br>
                 <img id="output-knob-image" class="knob-image" src="{{ image_knob_background }}">
-                <input id="output" class="input-knob" oninput="external.invoke('setOutput ' + this.value);spinKnob('output', 'output-knob-image');" type="range" min="0" max="100.0" value="0" step="1"/>
+                <input id="output" class="input-knob" oninput="external.invoke('setOutput ' + this.value);rotateKnob('output', 'output-knob-image');" type="range" min="0" max="100.0" value="0" step="1"/>
             </div>
         </div>
 
