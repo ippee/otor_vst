@@ -51,5 +51,6 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 ### Images
 - [DIAL_NASTY_-_01.knob](https://www.g200kg.com/en/webknobman/gallery.php?m=p&p=1679) by MFS AKA ©2020
+  - DIAL_NASTY_-_01.knob by MFS AKA ©2020 is licensed under a [Creative Commons CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/).
 - [red textile in close up image photo – Free Red Image on Unsplash](https://unsplash.com/photos/NRTYIVUkKnM?utm_source=twitter&utm_medium=referral&utm_content=photos-page-share) by Andrew Buchanan
 - [耳のイラスト](https://www.irasutoya.com/2014/05/blog-post_6517.html) by Illust-ya (いらすとや)

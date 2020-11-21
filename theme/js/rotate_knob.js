@@ -1,3 +1,9 @@
+// This code includes "DIAL_NASTY_-_01.knob."
+// DIAL_NASTY_-_01.knob by MFS AKA ©2020 is licensed under a Creative Commons CC BY-NC 4.0.
+// URL_1: https://www.g200kg.com/en/webknobman/gallery.php?m=p&p=1679
+// URL_2: https://creativecommons.org/licenses/by/4.0/
+
+
 function rotateKnob(InputIdName, ImageIdName) {
     var input_elem = document.getElementById(InputIdName);
     var image_elem = document.getElementById(ImageIdName);
