@@ -5,3 +5,5 @@ function setInitialValue(idName, getFnName) {
 
 setInitialValue("gain", "getGain");
 setInitialValue("output", "getOutput");
+spinKnob("gain", "gain-knob-image");
+spinKnob("output", "output-knob-image");

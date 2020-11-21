@@ -5,18 +5,20 @@ const INDEX: &str = include_str!("../theme/index.html");
 
 const JS_INI: &str = include_str!("../theme/js/initial_settings.js");
 const JS_KNOBS: &str = include_str!("../theme/js/input_knobs.js");
+const JS_SPIN: &str = include_str!("../theme/js/spin_knob.js");
 
 const CSS_MAIN: &str = include_str!("../theme/css/main.css");
 
 const IMAGE_EAR: &str = include_str!("../theme/images/ear");
 const IMAGE_BACKGROUND: &str = include_str!("../theme/images/background");
+const IMAGE_KNOB_BACKGROUND: &str = include_str!("../theme/images/knob/knob_background");
 
 pub fn generate_html() -> String {
-    let js_tags: String = join_text!(JS_INI, JS_KNOBS);
+    let js_tags: String = join_text!(JS_KNOBS, JS_SPIN, JS_INI);
     let css_tags: String = join_text!(CSS_MAIN);
 
-    let before: Vec<&str> = vec!["{{ js }}", "{{ css }}", "{{ image_ear }}", "{{ image_background }}"];
-    let after:Vec<&str> = vec![&*js_tags, &*css_tags, IMAGE_EAR, IMAGE_BACKGROUND];
+    let before: Vec<&str> = vec!["{{ js }}", "{{ css }}", "{{ image_ear }}", "{{ image_background }}", "{{ image_knob_background }}"];
+    let after:Vec<&str> = vec![&*js_tags, &*css_tags, IMAGE_EAR, IMAGE_BACKGROUND, IMAGE_KNOB_BACKGROUND];
 
     let html = replace_target(INDEX, before, after);
 

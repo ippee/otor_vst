@@ -9,15 +9,11 @@ body {
 
     user-select:none;
     -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
     -webkit-user-select: none;
-    
-    overflow: hidden;
 
-    position: relative;
+    overflow: hidden;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 img {
@@ -29,6 +25,7 @@ img {
 }
 
 .col {
+    position: relative;
     width: 30%; 
     height: 90vh; 
     border: solid 1px #000000;
@@ -48,6 +45,40 @@ p.title {
 }
 
 img.ear {
-    width: 60%;
+    width: 50%;
     vertical-align:middle;
+}
+
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    -webkit-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, 15%);
+}
+
+.konb {
+
+}
+
+img.knob-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, 15%);
+    width: 128px;
+    height: 128px;
+    background-image: url("{{ image_knob_background }}");
+    background-repeat:  no-repeat;
+    object-fit:none;
+}
+
+.input-knob {
+    width: 100px!important;
+    height: 100px!important;
+    border-radius: 50%;
+    opacity: 0;
 }
