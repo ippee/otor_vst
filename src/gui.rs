@@ -3,7 +3,7 @@ mod join_text;
 
 const INDEX: &str = include_str!("../theme/index.html");
 
-const JS_INVOKE: &str = include_str!("../theme/js/invoke_external_function.js");
+const JS_INI: &str = include_str!("../theme/js/initial_settings.js");
 const JS_KNOBS: &str = include_str!("../theme/js/input_knobs.js");
 
 const CSS_MAIN: &str = include_str!("../theme/css/main.css");
@@ -12,7 +12,7 @@ const IMAGE_EAR: &str = include_str!("../theme/images/ear");
 const IMAGE_BACKGROUND: &str = include_str!("../theme/images/background");
 
 pub fn generate_html() -> String {
-    let js_tags: String = join_text!(JS_INVOKE, JS_KNOBS);
+    let js_tags: String = join_text!(JS_INI, JS_KNOBS);
     let css_tags: String = join_text!(CSS_MAIN);
 
     let before: Vec<&str> = vec!["{{ js }}", "{{ css }}", "{{ image_ear }}", "{{ image_background }}"];
