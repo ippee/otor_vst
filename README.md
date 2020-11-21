@@ -18,12 +18,10 @@ Thus, to solve this problem, I developed OTOR.
 OTOR can amplify a signal up to 150 dB, but this plugin chops the amplified signal at 0 dBFS forcibly. By doing this, OTOR gives you fierce distorted sounds.  
 
 ## Progress
-The basic function of OTOR is already completed, so now I'm developing GUI.  
-If it's done also, I will publish OTOR formally.  
+I developed OTOR's UI tentatively, but the view may collapse depending on DAW. However, I think there is no problem for use. If you have a problem about this, please feel free to contact me.  
 
 At the moment, OTOR supports **Windows OS only**.  
-
-I want to develop the Mac OS version, but its outlook does not stand at all. If I should receive many requests for this, I would plan something like a crowdfunding campaign.  
+However, I guess that it also can be built on Mac OS, so if you are Mac and Rust user, please give it a try.  
 
 ## WARNING!
 **EARRAPE SOUNDS MAY DAMAGE YOUR EARS AS WELL AS YOUR AUDIO EQUIPMENT.**  
@@ -49,7 +47,6 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 - [rust-vst-gui](https://github.com/ippee/rust-vst-gui.git)
   - This is a fork of [mikesoylu / rust-vst-gui](https://github.com/mikesoylu/rust-vst-gui)
   - The origin of them is [vanderlokken / rust-vst-gui](https://github.com/vanderlokken/rust-vst-gui)
-- [lazy_static](https://github.com/rust-lang-nursery/lazy-static.rs) (1.4.0)
 - [input-knobs](https://github.com/g200kg/input-knobs)
 
 ### Images
