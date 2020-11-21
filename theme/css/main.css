@@ -20,10 +20,6 @@ img {
     pointer-events: none;
 }
 
-.main {
-    
-}
-
 .col {
     position: relative;
     width: 30%; 
@@ -40,26 +36,18 @@ footer {
     background-color: #222;
 }
 
-p.title {
-    padding-top: 0.1em;
-}
-
-img.ear {
-    width: 50%;
-    vertical-align:middle;
-}
-
 .label {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -60%);
     -webkit-transform: translate(-50%, -55%);
-    -ms-transform: translate(-50%, 15%);
+    -ms-transform: translate(-50%, -30%);
 }
 
-.konb {
-
+img.ear {
+    width: 50%;
+    vertical-align:middle;
 }
 
 img.knob-image {
@@ -68,7 +56,7 @@ img.knob-image {
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -55%);
-    -ms-transform: translate(-50%, 15%);
+    -ms-transform: translate(-50%, -22%);
     width: 128px;
     height: 128px;
     background-image: url("{{ image_knob_background }}");

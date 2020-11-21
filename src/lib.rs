@@ -118,7 +118,7 @@ impl Plugin for Otor {
         let gui = vst_gui::new_plugin_gui(
             gui::generate_html(),
             create_javascript_callback(self.params.clone()),
-            Some((900, 300)));
+            Some((600, 200)));
         Some(Box::new(gui))
     }
 }
