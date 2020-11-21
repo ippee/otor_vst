@@ -15,7 +15,6 @@ matrix:
   fast_finish: true
   allow_failures:
     - rust: nightly
-    - os: osx
     - os: linux
 
   include:
@@ -25,13 +24,6 @@ matrix:
       rust: beta
     - os: windows
       rust: nightly
-    - os: osx
-      rust: stable
-      env: TARGET=x86_64-apple-darwin
-    - os: linux
-      rust: stable
-      dist: trusty
-      
 
 branches:
   only:
